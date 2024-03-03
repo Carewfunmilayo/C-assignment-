@@ -1,0 +1,185 @@
+Q1. Write a C# program that prompt the user to input three numbers .The program should then output the numbers in ascending order.
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter three numbers:");
+        int[] numbers = new int[3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            numbers[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Array.Sort(numbers);
+
+        Console.WriteLine("Numbers in ascending order:");
+        foreach (int num in numbers)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+
+
+
+Q2 .Write a PHP Function ,smallestindex ,that takes as parameters an int array and its size,and returns the index of the smallest element in the array .Also,write a program to test your function.
+
+<?php
+function smallestindex($arr, $size) {
+    $min = $arr[0];
+    $index = 0;
+    for ($i = 1; $i < $size; $i++) {
+        if ($arr[$i] < $min) {
+            $min = $arr[$i];
+            $index = $i;
+        }
+    }
+    return $index;
+}
+
+// Test the function
+$arr = array(4, 2, 7, 1, 9, 5);
+$size = count($arr);
+$smallestIndex = smallestindex($arr, $size);
+echo "Index of the smallest element: $smallestIndex";
+?>
+
+
+
+Q3.Write a C# program that prompts the user to input a string and outputs the string in uppercase(Use a character array to store the string)
+ 
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a string:");
+        string inputString = Console.ReadLine();
+
+        char[] charArray = inputString.ToCharArray();
+        for (int i = 0; i < charArray.Length; i++)
+        {
+            charArray[i] = Char.ToUpper(charArray[i]);
+        }
+
+        string upperCaseString = new string(charArray);
+        Console.WriteLine("String in uppercase: " + upperCaseString);
+    }
+}
+
+
+
+Q4. Write a C# program to compute the addition of of N by M matrices.Allow the user to determine the size of the row and column
+
+ using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the number of rows for the matrices:");
+        int rows = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter the number of columns for the matrices:");
+        int cols = Convert.ToInt32(Console.ReadLine());
+
+        int[,] matrixA = new int[rows, cols];
+        int[,] matrixB = new int[rows, cols];
+        int[,] resultMatrix = new int[rows, cols];
+
+        Console.WriteLine("Enter the elements of matrix A:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                matrixA[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("Enter the elements of matrix B:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                matrixB[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("Resultant Matrix after addition:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                resultMatrix[i, j] = matrixA[i, j] + matrixB[i, j];
+                Console.Write(resultMatrix[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+Q5. Write a C# program that declares an array alpha of 50 components of the type float .Initialize the array so that the first 25 components are equal to the square of the index  variable and the last 25 components are equal to three times the index variable.Output the array so that 10 elements per line are printed.
+
+ using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        float[] alpha = new float[50];
+
+        for (int i = 0; i < 25; i++)
+        {
+            alpha[i] = i * i;
+        }
+
+        for (int i = 25; i < 50; i++)
+        {
+            alpha[i] = 3 * i;
+        }
+
+        Console.WriteLine("Array alpha:");
+        for (int i = 0; i < 50; i++)
+        {
+            Console.Write(alpha[i] + "\t");
+            if ((i + 1) % 10 == 0)
+            {
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+Q6 Write a C# program that prompts the user to input a number .The program should then output the number and a message saying wether the number is positive ,negative ,or zero.
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        if (number > 0)
+        {
+            Console.WriteLine("The number is positive.");
+        }
+        else if (number < 0)
+        {
+            Console.WriteLine("The number is negative.");
+        }
+        else
+        {
+            Console.WriteLine("The number is zero.");
+        }
+    }
+}
